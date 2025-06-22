@@ -1,43 +1,177 @@
-h2{
-    display: flex;
-    justify-self: center;
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
-.color-buttons {
+
+body {
+    font-family: 'Arial', sans-serif;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    min-height: 100vh;
     display: flex;
-    flex-wrap: wrap;
-    gap: 15px;
     justify-content: center;
+    align-items: center;
 }
 
-.button-red, .button-blue, .button-green, .button-purple, 
-.button-orange, .button-pink, .button-yellow, .button-gray {
-    padding: 12px 25px;
-    border: none;
-    border-radius: 8px;
-    cursor: pointer;
+.container {
+    background: white;
+    border-radius: 20px;
+    padding: 30px;
+    box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+    max-width: 500px;
+    width: 90%;
+    text-align: center;
+}
+
+.welcome-screen {
+    display: block;
+}
+
+.game-screen {
+    display: none;
+}
+
+h1 {
+    color: #333;
+    margin-bottom: 20px;
+    font-size: 28px;
+}
+
+h2 {
+    color: #555;
+    margin-bottom: 15px;
+    font-size: 22px;
+}
+
+.welcome-text {
     font-size: 16px;
-    font-weight: bold;
+    color: #666;
+    margin-bottom: 30px;
+    line-height: 1.6;
+}
+
+button {
+    background: linear-gradient(45deg, #ff6b6b, #ee5a52);
     color: white;
-    transition: transform 0.2s, box-shadow 0.2s;
-    min-width: 120px;
+    border: none;
+    padding: 15px 30px;
+    font-size: 16px;
+    border-radius: 50px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    margin: 10px;
 }
 
-.button-red:hover, .button-blue:hover, .button-green:hover, .button-purple:hover,
-.button-orange:hover, .button-pink:hover, .button-yellow:hover, .button-gray:hover {
+button:hover {
     transform: translateY(-2px);
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.2);
 }
 
-.button-red:active, .button-blue:active, .button-green:active, .button-purple:active,
-.button-orange:active, .button-pink:active, .button-yellow:active, .button-gray:active {
-    transform: translateY(0);
+button:disabled {
+    background: #ccc;
+    cursor: not-allowed;
+    transform: none;
 }
 
-.button-red { background-color: #e74c3c; }
-.button-blue { background-color: #3498db; }
-.button-green { background-color: #2ecc71; }
-.button-purple { background-color: #9b59b6; }
-.button-orange { background-color: #e67e22; }
-.button-pink { background-color: #e91e63; }
-.button-yellow { background-color: #f1c40f; color: #333; }
-.button-gray { background-color: #95a5a6; }
+.input-container {
+    margin: 20px 0;
+}
+
+input {
+    padding: 15px;
+    font-size: 16px;
+    border: 2px solid #ddd;
+    border-radius: 25px;
+    width: 80%;
+    text-align: center;
+    transition: border-color 0.3s ease;
+}
+
+input:focus {
+    outline: none;
+    border-color: #667eea;
+}
+
+.hints {
+    background: #f8f9fa;
+    border-radius: 15px;
+    padding: 20px;
+    margin: 20px 0;
+    text-align: left;
+}
+
+.hint-item {
+    margin: 10px 0;
+    padding: 10px;
+    background: white;
+    border-radius: 10px;
+    border-left: 4px solid #667eea;
+}
+
+.attempts {
+    font-size: 18px;
+    font-weight: bold;
+    color: #333;
+    margin: 15px 0;
+}
+
+.message {
+    padding: 15px;
+    border-radius: 10px;
+    margin: 15px 0;
+    font-weight: bold;
+}
+
+.success {
+    background: linear-gradient(45deg, #06ffa5, #00d4aa);
+    color: white;
+    animation: pulse 2s infinite;
+    padding: 12px;
+    border-radius: 12px;
+}
+
+.error {
+    background: #f8d7da;
+    color: #721c24;
+    border: 1px solid #f5c6cb;
+}
+
+.game-over {
+    background: linear-gradient(45deg, #ff6b6b, #ee5a24);
+    color: white;
+    padding: 20px;
+    border-radius: 15px;
+    font-size: 20px;
+    font-weight: bold;
+    margin: 20px 0;
+    animation: shake 0.5s ease-in-out;
+    text-align: center;
+}
+.hidden {
+    display: none;
+}
+
+.fade-in {
+    animation: fadeIn 0.5s ease-in;
+}
+ @keyframes shake { /* ეს keyframes კი პატარა ანიმაციებია რომლებიც ოდნავ ალამაზებს ამ თამაშს*/
+    0%, 100% { transform: translateX(0); }
+    25% { transform: translateX(-5px); }
+    75% { transform: translateX(5px); }
+}
+
+@keyframes pulse {/*ამაზეც იგივეს თქმა შემიძლია რაც @keyframes shake მიწერია*/
+    0% { transform: scale(1); }
+    50% { transform: scale(1.05); }
+    100% { transform: scale(1); }
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.animal-emoji {
+    font-size: 60px;
+    margin: 20px 0;
+}

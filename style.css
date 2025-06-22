@@ -1,0 +1,43 @@
+h2{
+    display: flex;
+    justify-self: center;
+}
+.color-buttons {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+    justify-content: center;
+}
+
+.button-red, .button-blue, .button-green, .button-purple, 
+.button-orange, .button-pink, .button-yellow, .button-gray {
+    padding: 12px 25px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: bold;
+    color: white;
+    transition: transform 0.2s, box-shadow 0.2s;
+    min-width: 120px;
+}
+
+.button-red:hover, .button-blue:hover, .button-green:hover, .button-purple:hover,
+.button-orange:hover, .button-pink:hover, .button-yellow:hover, .button-gray:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+}
+
+.button-red:active, .button-blue:active, .button-green:active, .button-purple:active,
+.button-orange:active, .button-pink:active, .button-yellow:active, .button-gray:active {
+    transform: translateY(0);
+}
+
+.button-red { background-color: #e74c3c; }
+.button-blue { background-color: #3498db; }
+.button-green { background-color: #2ecc71; }
+.button-purple { background-color: #9b59b6; }
+.button-orange { background-color: #e67e22; }
+.button-pink { background-color: #e91e63; }
+.button-yellow { background-color: #f1c40f; color: #333; }
+.button-gray { background-color: #95a5a6; }

@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+         <!-- ფერების სექცია -->
+        <div class="section">
+            <h2>ფონის ფერის შეცვლა</h2>
+            <div class="color-buttons">
+                <button class="button-red" onclick="changeBackground('#e74c3c')">წითელი</button>
+                <button class="button-blue" onclick="changeBackground('#3498db')">ლურჯი</button>
+                <button class="button-green" onclick="changeBackground('#2ecc71')">მწვანე</button>
+                <button class="button-purple" onclick="changeBackground('#9b59b6')">იასამნისფერი</button>
+                <button class="button-orange" onclick="changeBackground('#e67e22')">ნარინჯისფერი</button>
+                <button class="button-pink" onclick="changeBackground('#e91e63')">ვარდისფერი</button>
+                <button class="button-yellow" onclick="changeBackground('#f1c40f')">ყვითელი</button>
+                <button class="button-gray" onclick="changeBackground('#95a5a6')">ნაცრისფერი</button>
+            </div>
+        </div>
+<script>
+              // ფონის ფერის შეცვლის ფუნქცია
+        function changeBackground(color) {
+            document.body.style.backgroundColor = color;
+        }
+
+        // ეფექტების ფუნქცია - გაუმჯობესებული ვერსია
+        function effect(elementId, effectClass) {
+            const textElement = document.getElementById(elementId);
+            
+            // თუ ეფექტი უკვე არის, მოაშორე
+            if (textElement.classList.contains(effectClass)) {
+                textElement.classList.remove(effectClass);
+            } else {
+                // სხვა ეფექტები მოაშორე და ახალი დაამატე
+                textElement.className = 'effect-text ' + effectClass;
+            }
+        }
+
+        // ყველა ეფექტის განულება
+        function resetEffects(elementId) {
+            const textElement = document.getElementById(elementId);
+            textElement.className = 'effect-text';
+        }
+
+</script>
+</body>
+</html>
